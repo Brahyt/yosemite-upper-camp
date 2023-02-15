@@ -28,8 +28,6 @@ def check_site_reservations(campsite)
 
     next if EXCLUDE_AVAILABILITIES.include? campsite['availabilities'][key_date]
 
-    puts campsite['availabilities'][key_date]
-
     @avail_campsites[campsite['site']] = [] unless @avail_campsites[campsite['site']]
     @avail_campsites[campsite['site']] << key_date
   end
