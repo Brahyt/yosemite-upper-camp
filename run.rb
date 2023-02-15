@@ -13,7 +13,7 @@ end
 @parsed_end_date = DateTime.parse(ARGV[1])
 @avail_campsites = {}
 
-url = "https://www.recreation.gov/api/camps/availability/campground/232447/month?start_date=#{DateTime.parse(@start_date).strftime("%Y-%m")}-01T00%3A00%3A00.000Z"
+url = "https://www.recreation.gov/api/camps/availability/campground/232447/month?start_date=#{DateTime.parse(@start_date).strftime('%Y-%m')}-01T00%3A00%3A00.000Z"
 
 destination_url = "https://www.recreation.gov/search?q=Upper%20Pines%20Campground&checkin=#{@parsed_start_date.month}%2F#{@parsed_start_date.day}%2F#{@parsed_start_date.year}"
 
@@ -35,9 +35,9 @@ end
 response = HTTParty.get(url)
 
 unless response&.message == 'OK'
-  puts "ERROR"
+  puts 'ERROR'
   puts response
-  puts "ERROR"
+  puts 'ERROR'
 
   exit!
 end
@@ -62,4 +62,3 @@ else
 
   puts destination_url
 end
-
