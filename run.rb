@@ -1,5 +1,5 @@
 require 'httparty'
-require 'debug'
+
 EXCLUDE_AVAILABILITIES = ['Reserved', 'Not Reservable Management', 'NYR'].freeze
 
 unless ARGV[0] && ARGV[1]
